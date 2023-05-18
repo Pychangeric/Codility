@@ -4,11 +4,17 @@
     key-value pairs with keys present in the given array.
 
 =end
-
 def select_keys(hash, keys)
-    # Your code here
-end
-
+    selected_hash = {}
+  
+    keys.each do |key|
+      if hash.key?(key)
+        selected_hash[key] = hash[key]
+      end
+    end
+  
+    selected_hash
+  end
 # Example usage
 input = { a: 1, b: 2, c: 3, d: 4 }
 selected_keys = [:b, :c, :e]

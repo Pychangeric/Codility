@@ -1,10 +1,12 @@
-=begin
-    Write a function find_duplicates that takes an array as input and returns an 
-    array containing only the duplicate elements.   
-=end
-
 def find_duplicates(arr)
-    # Your code here
+  counts = Hash.new(0) 
+  duplicates = []      
+  arr.each do |element|
+    counts[element] += 1  
+    duplicates << element if counts[element] == 2  
+  end
+
+  duplicates  # Return the array of duplicate elements
 end
   
 # Example usage
